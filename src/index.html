@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Nikita Skirdin">
+    <meta name="description" content="">
+    <title></title>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+    <div class="root">
+        <h1 class="title">Карточки</h1>
+        <div class="content"> 
+            <div class="content__control">
+                <form class="content__control__form">
+                    <input type="text" name="title" class="content__control__column-title" value="Введите название колонки" />
+                    <input type="submit" class="content__control__add-column">Добавить колонку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

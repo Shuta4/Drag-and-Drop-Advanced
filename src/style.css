@@ -68,11 +68,14 @@ form {
     font-size: 1em;
 }
 .card {
+    position: relative;
     list-style: none;
-    width: 180px;
+    width: 170px;
     min-height: 30px;
     padding: 5px;
     background-color: darkmagenta;
     color: white;
     margin: 10px;
+    border: 2px solid indigo;
+    border-radius: 20px;
 }

@@ -15,7 +15,7 @@ class Card {
         this.move = this.move.bind(this);
     }
     _template() {
-        return `<div class="column__item card ${this._status}">
+        return `<div class="column__item card card_${this._status}">
                 <p class="card__text">${this._title}</p>
                 <p class="card__estimate">${this._estimate}</p>
             </div>`

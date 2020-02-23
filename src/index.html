@@ -11,16 +11,17 @@
 </head>
 <body>
     <div class="root">
-        <h1 class="title">Карточки</h1>
-        <div class="content"> 
-            <div class="content__control">
-                <form class="content__control__form">
-                    <input type="text" name="column_title" class="content__control__column-title" placeholder="Введите название колонки" />
-                    <input type="submit" class="content__control__add-column button" value="Добавить колонку">
+        <header class="main-header">
+            <h1 class="main-header__title">Карточки</h1>
+            <div class="main-header__control">
+                <form class="main-header__control__form">
+                    <input type="text" autocomplete="off" name="column_title" class="main-header__control__form__column-title" placeholder="Введите название колонки" />
+                    <input type="submit" class="main-header__control__form__add-column button" value="Добавить колонку">
                 </form>
             </div>
+        </header>
+        <div class="content"> 
             <div class="content__list">
-                
             </div>
         </div>
     </div>

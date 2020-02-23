@@ -7,5 +7,5 @@ arr.forEach(element => {
     cardArr.addElement(element)
 });
 
-var cardForm = new CardForm(".content__control__form");
+var cardForm = new CardForm(".main-header__control__form");
 cardForm.setEventListeners();

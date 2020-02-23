@@ -1,4 +1,5 @@
 import Card from './Card'
+import containerArr from './ContainerArr';
 
 class Column {
     constructor(title, container) {
@@ -33,6 +34,7 @@ class Column {
         this._element = arr[arr.length -1];
         this._form = this._element.querySelector('.column__form');
         this._form.addEventListener('submit', this._submitHandler)
+        containerArr.addElement(this._element.querySelector(".column__items"));
     }
 }
 

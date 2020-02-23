@@ -1,6 +1,6 @@
 {
   "name": "drag_and_drop_advanced",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple drag and drop with advanced options",
   "main": "index.js",
   "scripts": {

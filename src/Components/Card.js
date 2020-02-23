@@ -1,3 +1,5 @@
+import containerArr from "./ContainerArr";
+
 class Card {
     constructor(text, container) {
         this._text = text;
@@ -29,8 +31,8 @@ class Card {
         this._body.addEventListener('mousemove', (event) => {
             if(this._dragging) {
                 var mousePos = {
-                    X: event.clientX,
-                    Y: event.clientY
+                    X: event.pageX,
+                    Y: event.pageY
                 }
                 var topOffset = this._element.offsetHeight / 2;
                 var leftOffset = this._element.offsetWidth / 2;
@@ -45,9 +47,11 @@ class Card {
             this._element.style.position = "absolute"
         });
         this._body.addEventListener('mouseup', () => {
-            this._dragging = false;
-            var newContainer = this._container;
-            this.move(newContainer)
+            if(this._dragging) {
+                this._dragging = false;
+                var newContainer = containerArr.getClothest(this._element.getBoundingClientRect().x, this._element.getBoundingClientRect().y);
+                this.move(newContainer)
+            }
         });
     }
 }

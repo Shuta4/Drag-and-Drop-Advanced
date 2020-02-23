@@ -24,7 +24,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.content__list {
+.content__list {    
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -69,7 +69,6 @@ form {
 }
 .card {
     position: relative;
-    list-style: none;
     width: 170px;
     min-height: 30px;
     padding: 5px;
@@ -78,4 +77,7 @@ form {
     margin: 10px;
     border: 2px solid indigo;
     border-radius: 20px;
+}
+.column__items {
+    min-height: 100px;
 }

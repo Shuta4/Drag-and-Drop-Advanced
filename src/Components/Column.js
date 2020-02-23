@@ -1,5 +1,5 @@
 import Card from './Card'
-import containerArr from './ContainerArr';
+import containerArr from './ColumnArr';
 
 class Column {
     constructor(title, container) {
@@ -15,6 +15,13 @@ class Column {
                 <p class="column__title">${this._title}</p>
                 <form class="column__form">
                     <input type="text" name="card_title" class="column__form__card-title" placeholder="Введите название карточки" />
+                    <select class="column__form__card-status" name="card_status">
+                        <option disabled>Выберите статус</option>
+                        <option value="deadline">deadline</option>
+                        <option selected value="normal">normal</option>
+                        <option value="backlog">backlog</option>
+                    </select>
+                    <input type="text" name="card_estimate" class="column__form__card-estimate" placeholder="Введите срок истечения" />
                     <input type="submit" class="column__form__add-card button" value="+"/>
                 </form>
                 <div class="column__items"></div>
@@ -23,7 +30,7 @@ class Column {
     _submitHandler(event) {
         event.preventDefault();
         if(this._form.card_title.value) {
-            var card = new Card(this._form.card_title.value, this._element.querySelector('.column__items'));
+            var card = new Card(this._form.card_title.value, this._form.card_status.value, this._form.card_estimate.value, this._element.querySelector('.column__items'));
             card.render();
         }
         else alert("Введите название карточки!")
@@ -34,7 +41,7 @@ class Column {
         this._element = arr[arr.length -1];
         this._form = this._element.querySelector('.column__form');
         this._form.addEventListener('submit', this._submitHandler)
-        containerArr.addElement(this._element.querySelector(".column__items"));
+        containerArr.addElement(this._element);
     }
 }
 

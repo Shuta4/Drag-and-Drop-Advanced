@@ -1,4 +1,4 @@
-class ContainerArr {
+class ColumnArr {
     constructor() {
         this._array = [];
         this.addElement = this.addElement.bind(this);
@@ -25,6 +25,6 @@ class ContainerArr {
     }
 }
 
-var containerArr = new ContainerArr()
+var columnArr = new ColumnArr()
 
-export default containerArr;
+export default columnArr;

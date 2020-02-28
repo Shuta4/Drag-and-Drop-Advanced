@@ -1,5 +1,4 @@
-import containerArr from "./ColumnArr";
-import cardArr from './CardArr';
+import columnArr from "./ColumnArr";
 
 class Card {
     constructor(title, status, estimate, container) {
@@ -96,7 +95,7 @@ class Card {
         var arr = this._container.querySelectorAll('.card');
         this._element = arr[arr.length - 1];
         this.setEventListeners();
-        cardArr.addElement(this._element);
+        return this._element;
     }
     move(container) {
         this._container = container;
@@ -130,7 +129,7 @@ class Card {
         this._body.addEventListener('mouseup', () => {
             if(this._dragging && !this._editing) {
                 this._dragging = false;
-                var newContainer = containerArr.getClothest(this._element.getBoundingClientRect().x, this._element.getBoundingClientRect().y).querySelector(".column__items");
+                var newContainer = columnArr.getClothest(this._element.getBoundingClientRect().x, this._element.getBoundingClientRect().y).querySelector(".column__items");
                 this.move(newContainer)
             }
         });

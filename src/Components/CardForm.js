@@ -1,5 +1,6 @@
 import Column from './Column'
 
+
 class CardForm {
     constructor(form) {
         this._form = document.querySelector(form);
@@ -11,6 +12,7 @@ class CardForm {
         if(this._form.column_title.value) {
             var column = new Column(this._form.column_title.value, '.content__list');
             column.render();
+            
             this._form.column_title.value = '';
         } else alert("Введите название колонки!");
     }

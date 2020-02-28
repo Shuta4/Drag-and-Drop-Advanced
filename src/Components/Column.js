@@ -1,5 +1,6 @@
-import Card from './Card'
-import containerArr from './ColumnArr';
+import Card from './Card';
+import cardArr from './CardArr';
+import columnArr from './ColumnArr';
 
 class Column {
     constructor(title, container) {
@@ -36,6 +37,7 @@ class Column {
         if(this._form.card_title.value && this._form.card_status.value) {
             var card = new Card(this._form.card_title.value, this._form.card_status.value, this._form.card_estimate.value, this._element.querySelector('.column__items'));
             card.render();
+            cardArr.addElement(card);
             this._form.card_title.value = '';
             this._form.card_status.value = '';
             this._form.card_estimate.value = '';
@@ -53,7 +55,11 @@ class Column {
         this._form = this._element.querySelector('.column__form');
         this._form.addEventListener('submit', this._submitHandler);
         this._form.querySelector('.toggle-button').addEventListener('click', this._toggleForm)
-        containerArr.addElement(this._element);
+        columnArr.addElement(this._element);
+        return this._element;
+    }
+    getElement() {
+        return this._element;
     }
 }
 

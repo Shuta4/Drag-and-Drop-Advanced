@@ -1,5 +1,3 @@
-import Card from './Card';
-
 class CardArr {
     constructor() {
         this._array = [];
@@ -13,6 +11,9 @@ class CardArr {
         this._array.forEach(el => {
             el.render();
         });
+    }
+    getElementById(id) {
+        return this._array[id];
     }
 }
 

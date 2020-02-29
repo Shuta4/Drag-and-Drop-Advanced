@@ -1,4 +1,5 @@
 import Column from './Column'
+import columnArr from './ColumnArr';
 
 
 class CardForm {
@@ -12,7 +13,7 @@ class CardForm {
         if(this._form.column_title.value) {
             var column = new Column(this._form.column_title.value, '.content__list');
             column.render();
-            
+            columnArr.addElement(column);
             this._form.column_title.value = '';
         } else alert("Введите название колонки!");
     }

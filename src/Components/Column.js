@@ -1,6 +1,5 @@
 import Card from './Card';
 import cardArr from './CardArr';
-import columnArr from './ColumnArr';
 
 class Column {
     constructor(title, container) {
@@ -54,8 +53,7 @@ class Column {
         this._element = arr[arr.length -1];
         this._form = this._element.querySelector('.column__form');
         this._form.addEventListener('submit', this._submitHandler);
-        this._form.querySelector('.toggle-button').addEventListener('click', this._toggleForm)
-        columnArr.addElement(this._element);
+        this._form.querySelector('.toggle-button').addEventListener('click', this._toggleForm);
         return this._element;
     }
     getElement() {

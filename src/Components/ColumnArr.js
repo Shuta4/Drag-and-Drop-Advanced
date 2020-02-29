@@ -1,5 +1,3 @@
-import Column from './Column';
-
 class ColumnArr {
     constructor() {
         this._array = [];
@@ -10,14 +8,14 @@ class ColumnArr {
         this._array.push(el)
     }
     getClothest(x, y){
-        var arr = this._array
+        var arr = this._array;
         var min = null;
         for (var i = 0; i < arr.length; i++) {
-            if (i == 0) min = arr[i]
+            if (i == 0) min = arr[i].getElement()
             else {
                 var resmin = min.getBoundingClientRect();
-                var resarr = arr[i].getBoundingClientRect();
-                if(this._calcD(resmin.x, resmin.y, x, y) > this._calcD(resarr.x, resarr.y, x, y)) min = arr[i];
+                var curr = arr[i].getElement().getBoundingClientRect();
+                if(this._calcD(resmin.x, resmin.y, x, y) > this._calcD(curr.x, curr.y, x, y)) min = arr[i].getElement();
             }
         }
         return min;
